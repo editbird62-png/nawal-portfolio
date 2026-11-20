@@ -1,0 +1,1994 @@
+/* =====================================================
+   ALEX MORGAN — PORTFOLIO STYLESHEET
+   NAWAL FATIMA — AESTHETIC LIGHT PORTFOLIO
+   Only HTML & CSS | Soft Pastel Theme
+   ===================================================== */
+
+/* ---------- CSS Variables ---------- */
+/* ---------- Fonts & Variables ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg: #0a0a0f;
+  --bg-2: #111118;
+  --bg-card: #16161f;
+  --border: rgba(255, 255, 255, 0.07);
+  --text: #e2e8f0;
+  --text-muted: #8892a4;
+  --accent: #6c63ff;
+  --accent-2: #a855f7;
+  --accent-3: #06b6d4;
+  --gradient: linear-gradient(135deg, #6c63ff, #a855f7);
+  --radius: 14px;
+  --shadow: 0 4px 24px rgba(108, 99, 255, 0.12);
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --bg: #fdf6f0;
+  --bg2: #fff8f4;
+  --bg3: #fef0f5;
+  --pink: #e57fa0;
+  --pink-light: #f9d4e2;
+  --pink-dark: #c95f85;
+  --peach: #f8c8a8;
+  --lavender: #d8c5f0;
+  --mint: #b8e4d8;
+  --text: #3d2b35;
+  --text-soft: #7a5c6a;
+  --border: #f0dde8;
+  --white: #ffffff;
+  --shadow: 0 8px 32px rgba(229, 127, 160, 0.12);
+  --radius: 18px;
+  --transition: 0.3s ease;
+  font-size: 16px;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+textarea,
+button {
+  font-family: inherit;
+}
+
+em {
+  font-style: italic;
+  color: var(--pink-dark);
+}
+
+strong {
+  font-weight: 600;
+}
+
+/* ---------- Scrollbar ---------- */
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pink-light);
+  border-radius: 10px;
+}
+
+/* =====================================================
+   NAVBAR
+   ===================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.2rem 2rem;
+  transition: var(--transition);
+}
+
+.navbar.scrolled {
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 999;
+  background: rgba(253, 246, 240, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  padding: 0.9rem 2rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+  max-width: 1200px;
+
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.3rem;
+    font-weight: 500;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--pink-dark);
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      color: var(--text-soft);
+      transition: var(--transition);
+      position: relative;
+      padding-bottom: 2px;
+      padding-bottom: 3px;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient);
+      background: var(--pink);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-links a:hover {
+      color: var(--pink);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+
+      /* =====================================================
+   BUTTONS
+   ===================================================== */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 11px 26px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.88rem;
+        cursor: pointer;
+        border: none;
+        transition: var(--transition);
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .btn-pink {
+        background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+        color: #fff;
+        box-shadow: 0 4px 18px rgba(229, 127, 160, 0.35);
+      }
+
+      .btn-pink:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 28px rgba(229, 127, 160, 0.5);
+      }
+
+      .btn-outline-pink {
+        background: transparent;
+        color: var(--pink);
+        border: 2px solid var(--pink-light);
+      }
+
+      .btn-outline-pink:hover {
+        background: var(--pink-light);
+        transform: translateY(-3px);
+      }
+
+      .btn-sm-pink {
+        padding: 7px 16px;
+        font-size: 0.78rem;
+        border-radius: 50px;
+        background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        transition: var(--transition);
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--text);
+        border-radius: 2px;
+
+        .btn-sm-ghost {
+          padding: 7px 16px;
+          font-size: 0.78rem;
+          border-radius: 50px;
+          background: rgba(255, 255, 255, 0.8);
+          color: var(--text);
+          font-family: 'Poppins', sans-serif;
+          font-weight: 600;
+          border: none;
+          cursor: pointer;
+          transition: var(--transition);
+          display: inline-flex;
+          align-items: center;
+        }
+
+        .hamburger.open span:nth-child(1) {
+          transform: translateY(7px) rotate(45deg);
+        }
+
+        .hamburger.open span:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger.open span:nth-child(3) {
+          transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .btn-full {
+          width: 100%;
+          justify-content: center;
+        }
+
+        /* =====================================================
+   HERO
+   ===================================================== */
+        .hero {
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 7rem 10% 4rem;
+          gap: 3rem;
+          position: relative;
+          overflow: hidden;
+          gap: 3rem;
+          background: linear-gradient(145deg, #fdf6f0 60%, #fef0f5 100%);
+        }
+
+        .hero-bg {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+        }
+
+        .blob {
+
+          /* Deco blobs */
+          .hero-deco {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            animation: blobFloat 8s ease-in-out infinite;
+            pointer-events: none;
+            opacity: 0.55;
+          }
+
+          .blob-1 {
+            width: 500px;
+            height: 500px;
+            background: var(--accent);
+            top: -100px;
+            left: -100px;
+
+            .deco-1 {
+              width: 350px;
+              height: 350px;
+              background: radial-gradient(circle, #f9d4e2, transparent 70%);
+              top: -100px;
+              right: 5%;
+              animation: floatDeco 7s ease-in-out infinite;
+            }
+
+            .blob-2 {
+              width: 400px;
+              height: 400px;
+              background: var(--accent-2);
+              bottom: -50px;
+              right: -50px;
+              animation-delay: -4s;
+
+              .deco-2 {
+                width: 220px;
+                height: 220px;
+                background: radial-gradient(circle, #d8c5f0, transparent 70%);
+                bottom: 10%;
+                left: 2%;
+                animation: floatDeco 9s ease-in-out infinite reverse;
+              }
+
+              @keyframes blobFloat {
+
+                0%,
+                100% {
+                  transform: translate(0, 0) scale(1);
+                }
+
+                33% {
+                  transform: translate(30px, -20px) scale(1.05);
+                }
+
+                66% {
+                  transform: translate(-20px, 20px) scale(0.95);
+                }
+
+                .deco-3 {
+                  width: 150px;
+                  height: 150px;
+                  background: radial-gradient(circle, #b8e4d8, transparent 70%);
+                  top: 30%;
+                  left: 40%;
+                  animation: floatDeco 6s ease-in-out infinite 2s;
+                }
+
+                .grid-overlay {
+                  position: absolute;
+                  inset: 0;
+                  background-image:
+                    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+                  background-size: 50px 50px;
+                  mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.6) 0%, transparent 70%);
+
+                  @keyframes floatDeco {
+
+                    0%,
+                    100% {
+                      transform: translateY(0) scale(1);
+                    }
+
+                    50% {
+                      transform: translateY(-20px) scale(1.06);
+                    }
+                  }
+
+                  .hero-content {
+
+                    .hero-left {
+                      position: relative;
+                      z-index: 2;
+                      max-width: 600px;
+                      max-width: 540px;
+                    }
+
+                    .badge {
+                      display: inline-flex;
+                      align-items: center;
+                      gap: 6px;
+                      padding: 6px 16px;
+                      background: rgba(108, 99, 255, 0.12);
+                      border: 1px solid rgba(108, 99, 255, 0.3);
+
+                      .hero-tag {
+                        display: inline-block;
+                        padding: 5px 16px;
+                        background: var(--pink-light);
+                        color: var(--pink-dark);
+                        border-radius: 50px;
+                        font-size: 0.82rem;
+                        color: #a08fff;
+                        margin-bottom: 1.5rem;
+                        font-size: 0.8rem;
+                        font-weight: 600;
+                        margin-bottom: 1.2rem;
+                      }
+
+                      .hero-content h1 {
+                        .hero-left h1 {
+                          font-family: 'Playfair Display', serif;
+                          font-size: clamp(2.2rem, 5vw, 3.8rem);
+                          font-weight: 800;
+                          line-height: 1.1;
+                          margin-bottom: 0.5rem;
+                          font-weight: 700;
+                          line-height: 1.15;
+                          color: var(--text);
+                          margin-bottom: 1rem;
+                        }
+
+                        .gradient-text {
+                          background: var(--gradient);
+                          -webkit-background-clip: text;
+                          -webkit-text-fill-color: transparent;
+                          background-clip: text;
+
+                          .name-highlight {
+                            color: var(--pink);
+                            display: block;
+                          }
+
+                          .typewriter {
+                            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+                            font-weight: 400;
+                            color: var(--text-muted);
+                            margin-bottom: 1.5rem;
+                            font-family: 'Fira Code', monospace;
+                          }
+
+                          .hero-desc {
+                            color: var(--text-muted);
+
+                            .hero-sub {
+                              font-size: 1rem;
+                              max-width: 480px;
+                              color: var(--text-soft);
+                              margin-bottom: 2rem;
+                              line-height: 1.8;
+                            }
+
+                            .hero-actions {
+                              display: flex;
+                              gap: 1rem;
+                              flex-wrap: wrap;
+                              margin-bottom: 2.5rem;
+                            }
+
+                            .hero-stats {
+                              display: flex;
+                              align-items: center;
+                              gap: 1.5rem;
+                            }
+
+                            .stat {
+                              display: flex;
+                              flex-direction: column;
+                            }
+
+                            .stat-num {
+                              font-size: 1.8rem;
+                              font-weight: 800;
+                              background: var(--gradient);
+                              -webkit-background-clip: text;
+                              -webkit-text-fill-color: transparent;
+                              background-clip: text;
+                              line-height: 1;
+                            }
+
+                            .stat-label {
+                              font-size: 0.75rem;
+                              color: var(--text-muted);
+                            }
+
+                            .stat-divider {
+                              width: 1px;
+                              height: 40px;
+                              background: var(--border);
+                            }
+
+                            .hero-btns {
+                              display: flex;
+                              gap: 1rem;
+                              flex-wrap: wrap;
+                            }
+
+                            /* Hero Visual */
+                            .hero-visual {
+
+                              /* Hero Avatar */
+                              .hero-right {
+                                position: relative;
+                                z-index: 2;
+                                flex-shrink: 0;
+                              }
+
+                              .avatar-ring {
+                                .avatar-wrap {
+                                  position: relative;
+                                  width: 260px;
+                                  height: 260px;
+                                  border-radius: 50%;
+                                  padding: 4px;
+                                  background: var(--gradient);
+                                  animation: rotate 10s linear infinite;
+                                  display: flex;
+                                  align-items: center;
+                                  justify-content: center;
+                                }
+
+                                @keyframes rotate {
+                                  to {
+                                    transform: rotate(360deg);
+                                  }
+                                }
+
+                                .avatar {
+                                  width: 100%;
+                                  height: 100%;
+
+                                  .avatar-circle {
+                                    width: 200px;
+                                    height: 200px;
+                                    border-radius: 50%;
+                                    background: var(--bg-card);
+                                    background: linear-gradient(135deg, var(--pink-light), var(--lavender));
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    animation: rotate 10s linear infinite reverse;
+                                    font-size: 5.5rem;
+                                    color: var(--pink);
+                                    box-shadow: 0 12px 40px rgba(229, 127, 160, 0.25);
+                                    position: relative;
+                                    z-index: 2;
+                                  }
+
+                                  .avatar i {
+                                    font-size: 6rem;
+                                    color: var(--accent);
+                                  }
+
+                                  .orbit {
+                                    position: absolute;
+                                    border-radius: 50%;
+                                    border: 2px dashed var(--pink-light);
+                                    animation: spinOrbit 10s linear infinite;
+                                    display: flex;
+                                    align-items: flex-start;
+                                    justify-content: center;
+                                  }
+
+                                  .orbit-1 {
+                                    width: 240px;
+                                    height: 240px;
+                                  }
+
+                                  .orbit-2 {
+                                    width: 290px;
+                                    height: 290px;
+                                    animation-direction: reverse;
+                                    animation-duration: 15s;
+                                  }
+
+                                  .orbit .dot {
+                                    width: 10px;
+                                    height: 10px;
+                                    border-radius: 50%;
+                                    background: var(--pink);
+                                    margin-top: -5px;
+                                    display: block;
+                                  }
+
+                                  @keyframes spinOrbit {
+                                    to {
+                                      transform: rotate(360deg);
+                                    }
+                                  }
+
+                                  .floating-card {
+                                    .tag-float {
+                                      position: absolute;
+                                      display: flex;
+                                      align-items: center;
+                                      gap: 8px;
+                                      padding: 10px 18px;
+                                      background: var(--bg-card);
+                                      padding: 6px 14px;
+                                      background: var(--white);
+                                      border: 1px solid var(--border);
+                                      border-radius: 50px;
+                                      font-size: 0.85rem;
+                                      font-weight: 500;
+                                      font-size: 0.75rem;
+                                      font-weight: 600;
+                                      color: var(--text-soft);
+                                      box-shadow: 0 4px 16px rgba(229, 127, 160, 0.1);
+                                      animation: tagFloat 3s ease-in-out infinite;
+                                      white-space: nowrap;
+                                      box-shadow: var(--shadow);
+                                      animation: floatCard 3s ease-in-out infinite;
+                                      z-index: 3;
+                                    }
+
+                                    .floating-card i {
+                                      font-size: 1rem;
+                                    }
+
+                                    .card-1 {
+                                      top: 10px;
+                                      left: -60px;
+                                      animation-delay: 0s;
+                                    }
+
+                                    .card-1 i {
+                                      color: #61dafb;
+                                    }
+
+                                    .card-2 {
+                                      bottom: 60px;
+                                      left: -80px;
+                                      animation-delay: 1s;
+                                    }
+
+                                    .card-2 i {
+                                      color: #68a063;
+                                    }
+
+                                    .card-3 {
+                                      top: 50%;
+                                      right: -50px;
+                                      transform: translateY(-50%);
+                                      animation-delay: 2s;
+                                    }
+
+                                    .card-3 i {
+                                      color: #4db33d;
+                                    }
+
+                                    @keyframes floatCard {
+                                      .tf1 {
+                                        top: 10px;
+                                        left: -30px;
+                                        animation-delay: 0s;
+                                      }
+
+                                      .tf2 {
+                                        bottom: 20px;
+                                        left: -40px;
+                                        animation-delay: 1s;
+                                      }
+
+                                      .tf3 {
+                                        top: 50%;
+                                        right: -50px;
+                                        transform: translateY(-50%);
+                                        animation-delay: 2s;
+                                      }
+
+                                      .tf3-fix {
+                                        animation-name: tagFloat3;
+                                      }
+
+                                      @keyframes tagFloat {
+
+                                        0%,
+                                        100% {
+                                          transform: translateY(0);
+                                        }
+
+                                        50% {
+                                          transform: translateY(-8px);
+                                        }
+                                      }
+
+                                      .card-3 {
+                                        animation-name: floatCard3;
+                                      }
+
+                                      @keyframes floatCard3 {
+                                        @keyframes tagFloat3 {
+
+                                          0%,
+                                          100% {
+                                            transform: translateY(-50%);
+                                          }
+
+                                          50% {
+                                            transform: translateY(calc(-50% - 8px));
+                                          }
+                                        }
+
+                                        .scroll-down {
+                                          position: absolute;
+                                          bottom: 2rem;
+                                          left: 50%;
+                                          transform: translateX(-50%);
+                                          color: var(--text-muted);
+                                          font-size: 1.2rem;
+                                          animation: bounce 2s ease-in-out infinite;
+                                          z-index: 2;
+                                        }
+
+                                        @keyframes bounce {
+
+                                          0%,
+                                          100% {
+                                            transform: translateX(-50%) translateY(0);
+                                          }
+
+                                          50% {
+                                            transform: translateX(-50%) translateY(8px);
+                                          }
+                                        }
+
+                                        /* =====================================================
+   BUTTONS
+   SECTION SHARED
+   ===================================================== */
+                                        .btn {
+                                          display: inline-flex;
+                                          align-items: center;
+                                          gap: 8px;
+                                          padding: 12px 28px;
+                                          border-radius: 8px;
+
+                                          .section {
+                                            padding: 5.5rem 0;
+                                          }
+
+                                          .container {
+                                            max-width: 1100px;
+                                            margin: 0 auto;
+                                            padding: 0 2rem;
+                                          }
+
+                                          .section-label {
+                                            font-size: 0.8rem;
+                                            font-weight: 600;
+                                            font-size: 0.9rem;
+                                            cursor: pointer;
+                                            transition: var(--transition);
+                                            border: none;
+                                            color: var(--pink);
+                                            letter-spacing: 1.5px;
+                                            text-transform: uppercase;
+                                            margin-bottom: 0.6rem;
+                                            font-family: 'Poppins', sans-serif;
+                                          }
+
+                                          .btn-primary {
+                                            background: var(--gradient);
+                                            color: #fff;
+                                            box-shadow: 0 4px 20px rgba(108, 99, 255, 0.35);
+                                          }
+
+                                          .btn-primary:hover {
+                                            transform: translateY(-2px);
+                                            box-shadow: 0 8px 30px rgba(108, 99, 255, 0.5);
+                                          }
+
+                                          .btn-outline {
+                                            background: transparent;
+
+                                            .section-title {
+                                              font-family: 'Playfair Display', serif;
+                                              font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+                                              font-weight: 700;
+                                              margin-bottom: 2.5rem;
+                                              color: var(--text);
+                                              border: 1.5px solid var(--border);
+                                            }
+
+                                            .btn-outline:hover {
+                                              border-color: var(--accent);
+                                              color: var(--accent);
+                                              transform: translateY(-2px);
+                                            }
+
+                                            .btn-sm {
+                                              padding: 8px 18px;
+                                              font-size: 0.82rem;
+                                              border-radius: 6px;
+                                              background: var(--gradient);
+                                              color: #fff;
+                                            }
+
+                                            .btn-ghost {
+                                              background: rgba(255, 255, 255, 0.08);
+                                              color: var(--text);
+                                            }
+
+                                            .btn-full {
+                                              width: 100%;
+                                              justify-content: center;
+                                            }
+
+                                            .pink {
+                                              color: var(--pink);
+                                            }
+
+                                            /* =====================================================
+   SECTIONS (shared)
+   ===================================================== */
+                                            .section {
+                                              padding: 6rem 0;
+                                            }
+
+                                            .container {
+                                              max-width: 1200px;
+                                              margin: 0 auto;
+                                              padding: 0 2rem;
+                                            }
+
+                                            .section-header {
+                                              text-align: center;
+                                              margin-bottom: 3.5rem;
+                                            }
+
+                                            .section-tag {
+                                              display: inline-block;
+                                              padding: 4px 16px;
+                                              background: rgba(108, 99, 255, 0.1);
+                                              border: 1px solid rgba(108, 99, 255, 0.25);
+                                              border-radius: 50px;
+                                              font-size: 0.8rem;
+                                              color: #a08fff;
+                                              margin-bottom: 1rem;
+                                              font-family: 'Fira Code', monospace;
+                                            }
+
+                                            .section-header h2 {
+                                              font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+                                              font-weight: 800;
+                                            }
+
+                                            .section-desc {
+                                              color: var(--text-muted);
+                                              margin-top: 0.75rem;
+                                              max-width: 500px;
+                                              margin-inline: auto;
+                                            }
+
+                                            /* Fade-in animation */
+                                            .fade-in {
+                                              opacity: 0;
+                                              transform: translateY(24px);
+                                              transition: opacity 0.6s ease, transform 0.6s ease;
+                                            }
+
+                                            .fade-in.visible {
+                                              opacity: 1;
+                                              transform: none;
+                                            }
+
+                                            /* =====================================================
+   ABOUT
+   ===================================================== */
+                                            .about {
+                                              background: var(--bg-2);
+                                            }
+
+                                            .about {
+                                              background: var(--bg2);
+                                            }
+
+                                            .about-grid {
+                                              display: grid;
+                                              grid-template-columns: 1fr 1fr;
+                                              grid-template-columns: 1fr 1.4fr;
+                                              gap: 4rem;
+                                              align-items: center;
+                                            }
+
+                                            .about-image-wrapper {
+                                              display: flex;
+                                              justify-content: center;
+                                            }
+
+                                            .about-img-box {
+                                              position: relative;
+                                            }
+
+                                            .about-img-placeholder {
+                                              width: 320px;
+                                              height: 360px;
+                                              background: var(--bg-card);
+                                              border-radius: 20px;
+                                              border: 1px solid var(--border);
+
+                                              .about-img {
+                                                width: 300px;
+                                                height: 340px;
+                                                border-radius: 24px;
+                                                background: linear-gradient(145deg, var(--pink-light), var(--lavender));
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                font-size: 7rem;
+                                                color: var(--accent);
+                                                position: relative;
+                                                overflow: hidden;
+                                                color: var(--pink);
+                                                box-shadow: var(--shadow);
+                                              }
+
+                                              .about-img-placeholder::before {
+                                                content: '';
+
+                                                .about-badge {
+                                                  position: absolute;
+                                                  inset: 0;
+                                                  background: var(--gradient);
+                                                  opacity: 0.05;
+                                                }
+
+                                                .experience-badge {
+                                                  position: absolute;
+                                                  bottom: -20px;
+                                                  right: -20px;
+                                                  background: var(--gradient);
+                                                  border-radius: 14px;
+                                                  bottom: -16px;
+                                                  right: -16px;
+                                                  background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+                                                  color: #fff;
+                                                  border-radius: 16px;
+                                                  padding: 14px 20px;
+                                                  display: flex;
+                                                  flex-direction: column;
+                                                  align-items: center;
+                                                  box-shadow: 0 8px 24px rgba(108, 99, 255, 0.4);
+                                                  box-shadow: 0 6px 24px rgba(229, 127, 160, 0.4);
+                                                }
+
+                                                .experience-badge strong {
+                                                  font-size: 1.8rem;
+                                                  font-weight: 800;
+                                                  color: #fff;
+                                                  line-height: 1;
+                                                }
+
+                                                .experience-badge span {
+                                                  font-size: 0.72rem;
+                                                  color: rgba(255, 255, 255, 0.8);
+                                                }
+
+                                                .about-lead {
+                                                  font-size: 1.1rem;
+                                                  font-weight: 500;
+                                                  margin-bottom: 1rem;
+                                                  color: var(--text);
+                                                }
+
+                                                .about-text p {
+                                                  color: var(--text-muted);
+                                                  margin-bottom: 1rem;
+                                                }
+
+                                                .about-info {
+                                                  .badge-num {
+                                                    font-size: 1.9rem;
+                                                    font-weight: 700;
+                                                    line-height: 1;
+                                                  }
+
+                                                  .badge-txt {
+                                                    font-size: 0.7rem;
+                                                    opacity: 0.9;
+                                                  }
+
+                                                  .about-lead {
+                                                    font-size: 1.05rem;
+                                                    font-weight: 500;
+                                                    margin-bottom: 0.9rem;
+                                                  }
+
+                                                  .about-content p {
+                                                    color: var(--text-soft);
+                                                    margin-bottom: 0.9rem;
+                                                    font-size: 0.95rem;
+                                                  }
+
+                                                  .about-cards {
+                                                    display: grid;
+                                                    grid-template-columns: 1fr 1fr;
+                                                    gap: 0.75rem;
+                                                    margin: 1.5rem 0;
+                                                    margin-top: 1.4rem;
+                                                  }
+
+                                                  .info-item {
+                                                    .acard {
+                                                      display: flex;
+                                                      align-items: center;
+                                                      gap: 8px;
+                                                      font-size: 0.88rem;
+                                                      color: var(--text-muted);
+                                                      padding: 10px 14px;
+                                                      background: var(--bg);
+                                                      border: 1px solid var(--border);
+                                                      border-radius: 12px;
+                                                      font-size: 0.83rem;
+                                                      color: var(--text-soft);
+                                                      font-weight: 500;
+                                                      transition: var(--transition);
+                                                    }
+
+                                                    .info-item i {
+                                                      color: var(--accent);
+                                                      font-size: 0.9rem;
+                                                    }
+
+                                                    .acard:hover {
+                                                      border-color: var(--pink-light);
+                                                      background: var(--pink-light);
+                                                      color: var(--pink-dark);
+                                                    }
+
+                                                    .acard i {
+                                                      color: var(--pink);
+                                                      font-size: 0.95rem;
+                                                    }
+
+                                                    /* =====================================================
+   SKILLS
+   ===================================================== */
+                                                    .skills {
+                                                      background: var(--bg3);
+                                                    }
+
+                                                    .skills-grid {
+                                                      display: grid;
+                                                      grid-template-columns: repeat(3, 1fr);
+                                                      gap: 1.5rem;
+                                                      gap: 1.4rem;
+                                                      margin-bottom: 2.5rem;
+                                                    }
+
+                                                    .skill-category {
+                                                      background: var(--bg-card);
+
+                                                      .skill-card {
+                                                        background: var(--white);
+                                                        border: 1px solid var(--border);
+                                                        border-radius: var(--radius);
+                                                        padding: 1.8rem;
+                                                        padding: 1.8rem 1.5rem;
+                                                        transition: var(--transition);
+                                                        text-align: center;
+                                                      }
+
+                                                      .skill-category:hover {
+                                                        border-color: rgba(108, 99, 255, 0.3);
+
+                                                        .skill-card:hover {
+                                                          transform: translateY(-5px);
+                                                          box-shadow: var(--shadow);
+                                                          transform: translateY(-4px);
+                                                          border-color: var(--pink-light);
+                                                        }
+
+                                                        .skill-category h3 {
+                                                          font-size: 1rem;
+                                                          font-weight: 700;
+                                                          margin-bottom: 1.5rem;
+
+                                                          .skill-icon {
+                                                            width: 56px;
+                                                            height: 56px;
+                                                            border-radius: 14px;
+                                                            background: linear-gradient(135deg, var(--pink-light), var(--lavender));
+                                                            display: flex;
+                                                            align-items: center;
+                                                            gap: 8px;
+                                                            justify-content: center;
+                                                            font-size: 1.6rem;
+                                                            color: var(--pink);
+                                                            margin: 0 auto 1rem;
+                                                          }
+
+                                                          .skill-category h3 i {
+                                                            color: var(--accent);
+                                                          }
+
+                                                          .skill-item {
+                                                            margin-bottom: 1.1rem;
+                                                          }
+
+                                                          .skill-info {
+                                                            display: flex;
+                                                            align-items: center;
+                                                            gap: 8px;
+                                                            margin-bottom: 6px;
+                                                            font-size: 0.88rem;
+                                                            color: var(--text-muted);
+                                                          }
+
+                                                          .skill-info i {
+                                                            color: var(--accent);
+                                                            font-size: 1rem;
+                                                          }
+
+                                                          .skill-bar {
+                                                            height: 6px;
+                                                            background: rgba(255, 255, 255, 0.06);
+
+                                                            .skill-card h3 {
+                                                              font-size: 1rem;
+                                                              font-weight: 600;
+                                                              margin-bottom: 0.5rem;
+                                                              color: var(--text);
+                                                            }
+
+                                                            .skill-card p {
+                                                              font-size: 0.82rem;
+                                                              color: var(--text-soft);
+                                                              margin-bottom: 1.2rem;
+                                                            }
+
+                                                            .progress-bar {
+                                                              height: 8px;
+                                                              background: var(--pink-light);
+                                                              border-radius: 10px;
+                                                              overflow: hidden;
+                                                            }
+
+                                                            .skill-fill {
+                                                              .progress-fill {
+                                                                height: 100%;
+                                                                width: 0;
+                                                                background: var(--gradient);
+                                                                background: linear-gradient(90deg, var(--pink), var(--pink-dark));
+                                                                border-radius: 10px;
+                                                                transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+                                                                font-size: 0;
+                                                                display: flex;
+                                                                align-items: center;
+                                                                justify-content: flex-end;
+                                                                transition: width 1s ease;
+                                                              }
+
+                                                              /* Tech Pills */
+                                                              .tech-pills {
+                                                                display: flex;
+                                                                flex-wrap: wrap;
+                                                                gap: 0.6rem;
+                                                                justify-content: center;
+                                                              }
+
+                                                              .pill {
+
+                                                                /* Tools */
+                                                                .tools-row {
+                                                                  display: flex;
+                                                                  flex-wrap: wrap;
+                                                                  gap: 0.6rem;
+                                                                  justify-content: center;
+                                                                }
+
+                                                                .tool-tag {
+                                                                  padding: 6px 18px;
+                                                                  background: var(--bg-card);
+                                                                  background: var(--white);
+                                                                  border: 1px solid var(--border);
+                                                                  border-radius: 50px;
+                                                                  font-size: 0.82rem;
+                                                                  color: var(--text-muted);
+                                                                  font-size: 0.8rem;
+                                                                  color: var(--text-soft);
+                                                                  font-weight: 500;
+                                                                  transition: var(--transition);
+                                                                  cursor: default;
+                                                                }
+
+                                                                .pill:hover {
+                                                                  border-color: var(--accent);
+                                                                  color: var(--accent);
+                                                                  background: rgba(108, 99, 255, 0.08);
+
+                                                                  .tool-tag:hover {
+                                                                    background: var(--pink-light);
+                                                                    border-color: var(--pink);
+                                                                    color: var(--pink-dark);
+                                                                  }
+
+                                                                  /* =====================================================
+   PROJECTS
+   ===================================================== */
+                                                                  .projects {
+                                                                    background: var(--bg-2);
+                                                                  }
+
+                                                                  .projects {
+                                                                    background: var(--bg2);
+                                                                  }
+
+                                                                  .projects-grid {
+                                                                    display: grid;
+                                                                    grid-template-columns: repeat(3, 1fr);
+                                                                    gap: 1.5rem;
+                                                                    gap: 1.4rem;
+                                                                  }
+
+                                                                  .project-card.featured {
+                                                                    grid-column: span 1;
+                                                                  }
+
+                                                                  .project-card {
+                                                                    background: var(--bg-card);
+                                                                    background: var(--white);
+                                                                    border: 1px solid var(--border);
+                                                                    border-radius: var(--radius);
+                                                                    overflow: hidden;
+                                                                    transition: var(--transition);
+                                                                  }
+
+                                                                  .project-card:hover {
+                                                                    transform: translateY(-6px);
+                                                                    border-color: rgba(108, 99, 255, 0.3);
+                                                                    box-shadow: 0 12px 40px rgba(108, 99, 255, 0.15);
+                                                                    box-shadow: var(--shadow);
+                                                                    border-color: var(--pink-light);
+                                                                  }
+
+                                                                  .project-img {
+                                                                    position: relative;
+                                                                    height: 190px;
+                                                                    overflow: hidden;
+                                                                  }
+
+                                                                  .project-placeholder {
+                                                                    width: 100%;
+                                                                    height: 100%;
+
+                                                                    .proj-img {
+                                                                      height: 180px;
+                                                                      display: flex;
+                                                                      align-items: center;
+                                                                      justify-content: center;
+                                                                      font-size: 3.5rem;
+                                                                      color: rgba(255, 255, 255, 0.3);
+                                                                      color: rgba(255, 255, 255, 0.7);
+                                                                      position: relative;
+                                                                      overflow: hidden;
+                                                                      transition: var(--transition);
+                                                                    }
+
+                                                                    .p1 {
+                                                                      background: linear-gradient(135deg, #1e1b4b, #312e81);
+                                                                    }
+
+                                                                    .p2 {
+                                                                      background: linear-gradient(135deg, #064e3b, #065f46);
+                                                                    }
+
+                                                                    .p3 {
+                                                                      background: linear-gradient(135deg, #1e3a5f, #1e40af);
+                                                                    }
+
+                                                                    .p4 {
+                                                                      background: linear-gradient(135deg, #4a1942, #701a75);
+                                                                    }
+
+                                                                    .p5 {
+                                                                      background: linear-gradient(135deg, #431407, #7c2d12);
+                                                                    }
+
+                                                                    .p6 {
+                                                                      background: linear-gradient(135deg, #0c4a6e, #075985);
+                                                                    }
+
+                                                                    .project-overlay {
+                                                                      .pimg1 {
+                                                                        background: linear-gradient(135deg, #f9b8cc, #f0d4e8);
+                                                                      }
+
+                                                                      .pimg2 {
+                                                                        background: linear-gradient(135deg, #d4b8f0, #e8d4f9);
+                                                                      }
+
+                                                                      .pimg3 {
+                                                                        background: linear-gradient(135deg, #b8d4f0, #d4e8f9);
+                                                                      }
+
+                                                                      .pimg4 {
+                                                                        background: linear-gradient(135deg, #f9d4b8, #f0e8d4);
+                                                                      }
+
+                                                                      .pimg5 {
+                                                                        background: linear-gradient(135deg, #f0b8d4, #f9d4e8);
+                                                                      }
+
+                                                                      .pimg6 {
+                                                                        background: linear-gradient(135deg, #b8f0d4, #d4f9e8);
+                                                                      }
+
+                                                                      .proj-hover {
+                                                                        position: absolute;
+                                                                        inset: 0;
+                                                                        background: rgba(10, 10, 15, 0.8);
+                                                                        background: rgba(255, 255, 255, 0.75);
+                                                                        display: flex;
+                                                                        align-items: center;
+                                                                        justify-content: center;
+                                                                        gap: 0.75rem;
+                                                                        gap: 0.6rem;
+                                                                        opacity: 0;
+                                                                        transition: var(--transition);
+                                                                        backdrop-filter: blur(4px);
+                                                                      }
+
+                                                                      .project-card:hover .project-overlay {
+                                                                        opacity: 1;
+                                                                      }
+
+                                                                      .project-card:hover .project-placeholder {
+                                                                        transform: scale(1.05);
+                                                                      }
+
+                                                                      .project-info {
+                                                                        padding: 1.4rem;
+                                                                      }
+
+                                                                      .project-tag {
+                                                                        .project-card:hover .proj-hover {
+                                                                          opacity: 1;
+                                                                        }
+
+                                                                        .project-card:hover .proj-img {
+                                                                          transform: scale(1.03);
+                                                                        }
+
+                                                                        .proj-body {
+                                                                          padding: 1.3rem;
+                                                                        }
+
+                                                                        .proj-badge {
+                                                                          display: inline-block;
+                                                                          font-size: 0.72rem;
+                                                                          font-family: 'Fira Code', monospace;
+                                                                          color: #a08fff;
+                                                                          background: rgba(108, 99, 255, 0.1);
+                                                                          border: 1px solid rgba(108, 99, 255, 0.2);
+                                                                          border-radius: 4px;
+                                                                          padding: 2px 10px;
+                                                                          margin-bottom: 0.6rem;
+                                                                        }
+
+                                                                        .project-info h3 {
+                                                                          font-size: 1.05rem;
+                                                                          font-weight: 700;
+                                                                          font-size: 0.7rem;
+                                                                          font-weight: 600;
+                                                                          color: var(--pink);
+                                                                          background: var(--pink-light);
+                                                                          border-radius: 50px;
+                                                                          padding: 2px 12px;
+                                                                          margin-bottom: 0.5rem;
+                                                                        }
+
+                                                                        .project-info p {
+                                                                          font-size: 0.85rem;
+                                                                          color: var(--text-muted);
+                                                                          margin-bottom: 1rem;
+                                                                        }
+
+                                                                        .project-tech {
+                                                                          display: flex;
+                                                                          flex-wrap: wrap;
+                                                                          gap: 0.4rem;
+                                                                        }
+
+                                                                        .project-tech span {
+                                                                          font-size: 0.72rem;
+                                                                          padding: 3px 10px;
+                                                                          background: rgba(255, 255, 255, 0.05);
+                                                                          border: 1px solid var(--border);
+                                                                          border-radius: 4px;
+                                                                          color: var(--text-muted);
+                                                                        }
+
+                                                                        .proj-body h3 {
+                                                                          font-size: 1rem;
+                                                                          font-weight: 600;
+                                                                          margin-bottom: 0.4rem;
+                                                                          color: var(--text);
+                                                                        }
+
+                                                                        .proj-body p {
+                                                                          font-size: 0.82rem;
+                                                                          color: var(--text-soft);
+                                                                        }
+
+                                                                        /* =====================================================
+   CONTACT
+   ===================================================== */
+                                                                        .contact-grid {
+                                                                          .contact {
+                                                                            background: var(--bg3);
+                                                                          }
+
+                                                                          .contact-sub {
+                                                                            color: var(--text-soft);
+                                                                            font-size: 0.95rem;
+                                                                            margin-top: -1.5rem;
+                                                                            margin-bottom: 2.5rem;
+                                                                          }
+
+                                                                          .contact-wrap {
+                                                                            display: grid;
+                                                                            grid-template-columns: 1fr 1.5fr;
+                                                                            gap: 3rem;
+                                                                            align-items: start;
+                                                                          }
+
+                                                                          .contact-info {
+                                                                            display: flex;
+                                                                            flex-direction: column;
+                                                                            gap: 1rem;
+                                                                          }
+
+                                                                          .contact-card {
+                                                                            .contact-left {
+                                                                              display: flex;
+                                                                              flex-direction: column;
+                                                                              gap: 1rem;
+                                                                            }
+
+                                                                            .cinfo-card {
+                                                                              display: flex;
+                                                                              align-items: center;
+                                                                              gap: 1rem;
+                                                                              padding: 1.2rem;
+                                                                              background: var(--bg-card);
+                                                                              padding: 1.1rem 1.3rem;
+                                                                              background: var(--white);
+                                                                              border: 1px solid var(--border);
+                                                                              border-radius: var(--radius);
+                                                                              transition: var(--transition);
+                                                                            }
+
+                                                                            .contact-card:hover {
+                                                                              border-color: rgba(108, 99, 255, 0.3);
+                                                                              transform: translateX(4px);
+                                                                            }
+
+                                                                            .contact-card>i {
+                                                                              font-size: 1.3rem;
+                                                                              color: var(--accent);
+
+                                                                              .cinfo-card:hover {
+                                                                                border-color: var(--pink-light);
+                                                                                transform: translateX(4px);
+                                                                              }
+
+                                                                              .cinfo-icon {
+                                                                                width: 42px;
+                                                                                height: 42px;
+                                                                                background: rgba(108, 99, 255, 0.1);
+                                                                                border-radius: 10px;
+                                                                                border-radius: 12px;
+                                                                                background: var(--pink-light);
+                                                                                color: var(--pink);
+                                                                                display: flex;
+                                                                                align-items: center;
+                                                                                justify-content: center;
+                                                                                font-size: 1.1rem;
+                                                                                flex-shrink: 0;
+                                                                              }
+
+                                                                              .contact-card h4 {
+                                                                                font-size: 0.82rem;
+                                                                                color: var(--text-muted);
+                                                                                margin-bottom: 2px;
+                                                                              }
+
+                                                                              .contact-card a,
+                                                                              .contact-card span {
+                                                                                font-size: 0.9rem;
+                                                                                font-weight: 500;
+                                                                                color: var(--text);
+                                                                                transition: var(--transition);
+                                                                              }
+
+                                                                              .contact-card a:hover {
+                                                                                color: var(--accent);
+                                                                              }
+
+                                                                              .social-links {
+                                                                                display: flex;
+                                                                                gap: 0.75rem;
+                                                                                margin-top: 0.5rem;
+                                                                              }
+
+                                                                              .social-btn {
+                                                                                width: 42px;
+                                                                                height: 42px;
+                                                                                border-radius: 10px;
+                                                                                background: var(--bg-card);
+
+                                                                                .cinfo-card h4 {
+                                                                                  font-size: 0.75rem;
+                                                                                  color: var(--text-soft);
+                                                                                  margin-bottom: 2px;
+                                                                                }
+
+                                                                                .cinfo-card a,
+                                                                                .cinfo-card span {
+                                                                                  font-size: 0.88rem;
+                                                                                  font-weight: 500;
+                                                                                  color: var(--text);
+                                                                                  transition: var(--transition);
+                                                                                }
+
+                                                                                .cinfo-card a:hover {
+                                                                                  color: var(--pink);
+                                                                                }
+
+                                                                                .social-row {
+                                                                                  display: flex;
+                                                                                  gap: 0.7rem;
+                                                                                  margin-top: 0.3rem;
+                                                                                }
+
+                                                                                .soc-btn {
+                                                                                  width: 40px;
+                                                                                  height: 40px;
+                                                                                  border-radius: 12px;
+                                                                                  background: var(--white);
+                                                                                  border: 1px solid var(--border);
+                                                                                  display: flex;
+                                                                                  align-items: center;
+                                                                                  justify-content: center;
+                                                                                  font-size: 1rem;
+                                                                                  color: var(--text-muted);
+                                                                                  font-size: 0.95rem;
+                                                                                  color: var(--text-soft);
+                                                                                  transition: var(--transition);
+                                                                                }
+
+                                                                                .social-btn:hover {
+                                                                                  background: var(--gradient);
+
+                                                                                  .soc-btn:hover {
+                                                                                    background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+                                                                                    color: #fff;
+                                                                                    border-color: transparent;
+                                                                                    color: #fff;
+                                                                                    transform: translateY(-3px);
+                                                                                  }
+
+                                                                                  /* Contact Form */
+                                                                                  .contact-form {
+                                                                                    background: var(--bg-card);
+                                                                                    background: var(--white);
+                                                                                    border: 1px solid var(--border);
+                                                                                    border-radius: var(--radius);
+                                                                                    padding: 2rem;
+                                                                                    display: flex;
+                                                                                    flex-direction: column;
+                                                                                    gap: 1.2rem;
+                                                                                    gap: 1.1rem;
+                                                                                  }
+
+                                                                                  .form-row {
+                                                                                    display: grid;
+                                                                                    grid-template-columns: 1fr 1fr;
+                                                                                    gap: 1rem;
+                                                                                  }
+
+                                                                                  .form-group {
+                                                                                    display: flex;
+                                                                                    flex-direction: column;
+                                                                                    gap: 0.4rem;
+                                                                                  }
+
+                                                                                  .form-group label {
+                                                                                    font-size: 0.82rem;
+                                                                                    font-weight: 500;
+                                                                                    color: var(--text-muted);
+                                                                                  }
+
+                                                                                  .form-group label {
+                                                                                    font-size: 0.8rem;
+                                                                                    font-weight: 600;
+                                                                                    color: var(--text-soft);
+                                                                                  }
+
+                                                                                  .form-group input,
+                                                                                  .form-group textarea {
+                                                                                    padding: 11px 14px;
+                                                                                    background: rgba(255, 255, 255, 0.03);
+                                                                                    border: 1px solid var(--border);
+                                                                                    border-radius: 8px;
+                                                                                    background: var(--bg);
+                                                                                    border: 1.5px solid var(--border);
+                                                                                    border-radius: 10px;
+                                                                                    font-size: 0.88rem;
+                                                                                    color: var(--text);
+                                                                                    font-size: 0.9rem;
+                                                                                    font-family: 'Poppins', sans-serif;
+                                                                                    transition: var(--transition);
+                                                                                    resize: vertical;
+                                                                                  }
+
+                                                                                  .form-group input:focus,
+                                                                                  .form-group textarea:focus {
+                                                                                    outline: none;
+                                                                                    border-color: var(--accent);
+                                                                                    background: rgba(108, 99, 255, 0.05);
+                                                                                    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.12);
+                                                                                    border-color: var(--pink);
+                                                                                    background: #fff;
+                                                                                    box-shadow: 0 0 0 3px rgba(229, 127, 160, 0.1);
+                                                                                  }
+
+                                                                                  .form-group input::placeholder,
+                                                                                  .form-group textarea::placeholder {
+                                                                                    color: rgba(255, 255, 255, 0.2);
+                                                                                  }
+
+                                                                                  .form-group textarea::placeholder {
+                                                                                    color: #c8aab5;
+                                                                                    font-size: 0.85rem;
+                                                                                  }
+
+                                                                                  /* =====================================================
+   FOOTER
+   ===================================================== */
+                                                                                  .footer {
+                                                                                    background: var(--bg-2);
+                                                                                    background: var(--white);
+                                                                                    border-top: 1px solid var(--border);
+                                                                                    padding: 2rem 0;
+                                                                                    padding: 1.8rem 0;
+                                                                                  }
+
+                                                                                  .footer-content {
+                                                                                    .footer-inner {
+                                                                                      display: flex;
+                                                                                      align-items: center;
+                                                                                      justify-content: space-between;
+                                                                                    }
+
+                                                                                    .footer-content p {
+                                                                                      font-size: 0.85rem;
+                                                                                      color: var(--text-muted);
+                                                                                    }
+
+                                                                                    .back-to-top {
+                                                                                      width: 38px;
+                                                                                      height: 38px;
+                                                                                      border-radius: 8px;
+                                                                                      background: rgba(108, 99, 255, 0.1);
+                                                                                      border: 1px solid rgba(108, 99, 255, 0.25);
+
+                                                                                      .footer-logo {
+                                                                                        font-family: 'Playfair Display', serif;
+                                                                                        font-weight: 700;
+                                                                                        color: var(--pink-dark);
+                                                                                        font-size: 1.1rem;
+                                                                                      }
+
+                                                                                      .footer-inner p {
+                                                                                        font-size: 0.83rem;
+                                                                                        color: var(--text-soft);
+                                                                                      }
+
+                                                                                      .top-btn {
+                                                                                        width: 36px;
+                                                                                        height: 36px;
+                                                                                        border-radius: 10px;
+                                                                                        background: var(--pink-light);
+                                                                                        color: var(--pink-dark);
+                                                                                        display: flex;
+                                                                                        align-items: center;
+                                                                                        justify-content: center;
+                                                                                        color: var(--accent);
+                                                                                        font-size: 0.9rem;
+                                                                                        transition: var(--transition);
+                                                                                      }
+
+                                                                                      .back-to-top:hover {
+                                                                                        background: var(--gradient);
+
+                                                                                        .top-btn:hover {
+                                                                                          background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+                                                                                          color: #fff;
+                                                                                          transform: translateY(-3px);
+                                                                                        }
+
+                                                                                        /* =====================================================
+   RESPONSIVE
+   ===================================================== */
+                                                                                        @media (max-width: 1024px) {
+                                                                                          .hero {
+                                                                                            padding: 7rem 5% 4rem;
+                                                                                          }
+
+                                                                                          .about-img-placeholder {
+                                                                                            width: 260px;
+                                                                                            height: 300px;
+                                                                                          }
+
+                                                                                          .skills-grid {
+                                                                                            grid-template-columns: 1fr 1fr;
+                                                                                          }
+
+                                                                                          .projects-grid {
+                                                                                            grid-template-columns: 1fr 1fr;
+                                                                                          }
+
+                                                                                          .hero {
+                                                                                            padding: 7rem 5% 4rem;
+                                                                                          }
+                                                                                        }
+
+                                                                                        @media (max-width: 768px) {
+
+                                                                                          /* Nav */
+                                                                                          .hamburger {
+                                                                                            display: flex;
+                                                                                          }
+
+                                                                                          .nav-links {
+                                                                                            position: fixed;
+                                                                                            top: 0;
+                                                                                            right: 0;
+                                                                                            width: 260px;
+                                                                                            height: 100vh;
+                                                                                            background: var(--bg-card);
+                                                                                            border-left: 1px solid var(--border);
+                                                                                            flex-direction: column;
+                                                                                            justify-content: center;
+                                                                                            gap: 2.5rem;
+                                                                                            transform: translateX(100%);
+                                                                                            transition: var(--transition);
+                                                                                            padding: 2rem;
+                                                                                          }
+
+                                                                                          .nav-links.open {
+                                                                                            transform: translateX(0);
+                                                                                          }
+
+                                                                                          .nav-links a {
+                                                                                            font-size: 1.1rem;
+                                                                                          }
+
+                                                                                          .nav-links {
+                                                                                            display: none;
+                                                                                          }
+
+                                                                                          /* Hero */
+                                                                                          .hero {
+                                                                                            flex-direction: column;
+                                                                                            flex-direction: column-reverse;
+                                                                                            text-align: center;
+                                                                                            padding: 6rem 5% 4rem;
+                                                                                            gap: 2.5rem;
+                                                                                            gap: 2rem;
+                                                                                          }
+
+                                                                                          .hero-desc {
+                                                                                            margin-inline: auto;
+                                                                                          }
+
+                                                                                          .hero-actions {
+                                                                                            justify-content: center;
+                                                                                          }
+
+                                                                                          .hero-stats {
+                                                                                            justify-content: center;
+                                                                                          }
+
+                                                                                          .hero-visual {
+                                                                                            order: -1;
+                                                                                          }
+
+                                                                                          .avatar-ring {
+                                                                                            width: 180px;
+                                                                                            height: 180px;
+                                                                                          }
+
+                                                                                          .avatar i {
+                                                                                            font-size: 4rem;
+                                                                                          }
+
+                                                                                          .floating-card {
+                                                                                            font-size: 0.75rem;
+                                                                                            padding: 7px 14px;
+                                                                                          }
+
+                                                                                          .card-1 {
+                                                                                            top: 5px;
+                                                                                            left: -40px;
+                                                                                          }
+
+                                                                                          .card-2 {
+                                                                                            bottom: 20px;
+                                                                                            left: -55px;
+                                                                                          }
+
+                                                                                          .card-3 {
+                                                                                            right: -30px;
+                                                                                          }
+
+                                                                                          .hero-btns {
+                                                                                            justify-content: center;
+                                                                                          }
+
+                                                                                          /* About */
+                                                                                          .about-grid {
+                                                                                            grid-template-columns: 1fr;
+                                                                                            gap: 2.5rem;
+                                                                                          }
+
+                                                                                          .about-info {
+                                                                                            grid-template-columns: 1fr;
+                                                                                          }
+
+                                                                                          .about-grid {
+                                                                                            grid-template-columns: 1fr;
+                                                                                          }
+
+                                                                                          .about-img {
+                                                                                            margin: 0 auto;
+                                                                                          }
+
+                                                                                          .about-cards {
+                                                                                            grid-template-columns: 1fr 1fr;
+                                                                                          }
+
+                                                                                          .about-img-box {
+                                                                                            text-align: center;
+                                                                                          }
+
+                                                                                          /* Skills */
+                                                                                          .skills-grid {
+                                                                                            grid-template-columns: 1fr;
+                                                                                          }
+
+                                                                                          /* Projects */
+                                                                                          .projects-grid {
+                                                                                            grid-template-columns: 1fr;
+                                                                                          }
+
+                                                                                          /* Contact */
+                                                                                          .contact-grid {
+                                                                                            grid-template-columns: 1fr;
+                                                                                          }
+
+                                                                                          .contact-wrap {
+                                                                                            grid-template-columns: 1fr;
+                                                                                          }
+
+                                                                                          .form-row {
+                                                                                            grid-template-columns: 1fr;
+                                                                                          }
+
+                                                                                          /* Footer */
+                                                                                          .footer-content {
+                                                                                            flex-direction: column;
+                                                                                            gap: 1rem;
+                                                                                            text-align: center;
+                                                                                          }
+
+                                                                                          .footer-inner {
+                                                                                            flex-direction: column;
+                                                                                            gap: 0.75rem;
+                                                                                            text-align: center;
+                                                                                          }
+
+                                                                                          .avatar-wrap {
+                                                                                            width: 200px;
+                                                                                            height: 200px;
+                                                                                          }
+
+                                                                                          .avatar-circle {
+                                                                                            width: 150px;
+                                                                                            height: 150px;
+                                                                                            font-size: 4rem;
+                                                                                          }
+
+                                                                                          .orbit-1 {
+                                                                                            width: 190px;
+                                                                                            height: 190px;
+                                                                                          }
+
+                                                                                          .orbit-2 {
+                                                                                            width: 230px;
+                                                                                            height: 230px;
+                                                                                          }
+
+                                                                                          .tf3 {
+                                                                                            right: -20px;
+                                                                                          }
+                                                                                        }
+
+                                                                                        @media (max-width: 480px) {
+                                                                                          .hero-content h1 {
+                                                                                            font-size: 2rem;
+                                                                                          }
+
+                                                                                          .floating-card {
+                                                                                            display: none;
+                                                                                          }
+
+                                                                                          .hero-left h1 {
+                                                                                            font-size: 2.1rem;
+                                                                                          }
+
+                                                                                          .about-cards {
+                                                                                            grid-template-columns: 1fr;
+                                                                                          }
+
+                                                                                          .tag-float {
+                                                                                            display: none;
+                                                                                          }
+                                                                                        }
